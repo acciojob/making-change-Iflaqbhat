@@ -11,7 +11,7 @@ const makeChange = (c) => {
 
     return { q, d, n, p };
 };
-module.exports=mincost;
+module.exports=makeChange;
 
 	
 
