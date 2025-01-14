@@ -1,32 +1,22 @@
 const makeChange = (c) => {
-  // your name here
-	
-    // Initialize an object to store the count of each coin
-    let change = { q: 0, d: 0, n: 0, p: 0 };
-    
-    // Define the values of each coin in cents
-    const quarterValue = 25;
-    const dimeValue = 10;
-    const nickelValue = 5;
-    const pennyValue = 1;
-    
     // Calculate the number of quarters
-    change.q = Math.floor(amount / quarterValue);
-    amount %= quarterValue;
-    
+    const q = Math.floor(c / 25);
+    c %= 25; // Remaining cents after quarters
+
     // Calculate the number of dimes
-    change.d = Math.floor(amount / dimeValue);
-    amount %= dimeValue;
-    
+    const d = Math.floor(c / 10);
+    c %= 10; // Remaining cents after dimes
+
     // Calculate the number of nickels
-    change.n = Math.floor(amount / nickelValue);
-    amount %= nickelValue;
-    
-    // Calculate the number of pennies
-    change.p = amount; // Remainder is all pennies
-    
-    return change;
-}
+    const n = Math.floor(c / 5);
+    c %= 5; // Remaining cents after nickels
+
+    // Remaining cents are all pennies
+    const p = c;
+
+    // Return the object with the counts
+    return { q, d, n, p };
+};
 
 	
 
